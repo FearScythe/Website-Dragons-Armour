@@ -1,0 +1,558 @@
+<html>
+    <head>
+        <title>Dragons Armour</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="icon" type="png/jpeg" href="Images/Icon/icon.png">
+        <link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                font: 400 15px/1.8 "Lato", sans-serif;
+                color: black;
+                background-color: black;
+            }           
+            .slide-show {
+                min-width: 100%;
+                min-height: 100%;
+                position: relative;
+            }
+            .slide-1,.slide-2,.slide-3 {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            .slide-1 {
+                background: url("Images/Backgrounds/slideshow-bg1.jpg")no-repeat center;
+                background-size: cover;
+                animation:fade 12s infinite;
+                -webkit-animation:fade 12s infinite;
+                -webkit-animation-delay: 4s;
+                background-attachment: fixed;
+
+            } 
+            .slide-2 {
+                background: url("Images/Backgrounds/slideshow-bg2.jpg")no-repeat center;
+                background-size: cover;
+                animation:fade2 12s infinite;
+                -webkit-animation:fade2 12s infinite;
+                -webkit-animation-delay: 4s;
+                background-attachment: fixed;
+            }
+            .slide-3 {
+                background: url("Images/Backgrounds/slideshow-bg3.jpg")no-repeat center;
+                background-size: cover;
+                animation:fade3 12s infinite;
+                -webkit-animation:fade3 12s infinite;
+                -webkit-animation-delay: 4s;
+                background-attachment: fixed;
+            }
+            @keyframes fade
+            {
+              0%   {opacity:30}
+              33.333% { opacity: 0}
+              66.666% { opacity: 0}
+              100% { opacity: 10}
+            }
+            @keyframes fade2
+            {
+              0%   {opacity:0}
+              33.333% { opacity: 30}
+              66.666% { opacity: 0 }
+              100% { opacity: 0}
+            }
+            @keyframes fade3
+            {
+              0%   {opacity:0}
+              33.333% { opacity: 0}
+              66.666% { opacity: 30}
+              100% { opacity: 0}
+            }
+            .s-cover {         
+                background-color: black;
+                opacity: 0.75;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .logo-desc {
+                z-index: 1;
+                position: relative;
+                margin-top: -50px;
+            }
+            .slide-show .s-buttons {
+                position: absolute;
+                left: 0;
+                top: 55%;
+                width: 100%;
+            }
+            .s-button {
+                display: inline-block;
+                position: relative;
+                background-color: transparent;
+                border: 2px solid white;
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 28;
+                margin: 5px;
+                color: white;
+                font-family: "Bebas Neue";
+                cursor: pointer;
+                z-index: 3;
+            }
+            .s-button:hover {
+                background-color: white;
+                color: black;
+                text-decoration: underline;
+            }
+            .s-button:hover i {
+                color:#fcef3f;
+                -webkit-text-stroke-width: 1px; 
+                -webkit-text-stroke-color: black;
+            }
+            #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: #ed3a34;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+            .navigation {
+                opacity: 0;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow: hidden;
+                background-color: #121212;
+                z-index: 3;
+                position: fixed;
+            }
+            .navigation a {
+                float: right;
+                display: block;
+                margin: 5px;
+                padding: 5px 9px;
+                font-family: "Russo One";
+                text-decoration: none;
+                color: whitesmoke;
+                cursor: pointer;
+            }
+            .navigation #btn-shp {
+                background-color: #fc3f3f;
+            }
+            .navigation #btn-con:hover {
+                background-color: #fcef3f;
+                color: black;
+            }
+            .navigation #btn-gal:hover {
+                background-color: #3676e3;
+            }
+            .navigation #btn-home:hover {
+                background-color: #09db4b;
+            }
+            .navigation #btn-shp:hover {
+                text-decoration: underline;
+            }
+            .first-slide {
+                color: black;
+                background-color:white;
+                text-align:center;
+                padding:80px 90px;
+                text-align: justify;
+                height: auto; 
+                margin-left:0%; 
+                margin-right:0%;
+                position: absolute;
+            }
+            .welcome-logo, .welcome-text {
+                margin: 18px;
+                width: 45%;
+                margin: 20px;
+                float: left;
+                
+            }
+            .welcome-text{
+                margin-top: -15px;
+            }
+            .welcome-desc {
+                display: table;
+                content: "";
+                clear: both;
+            }
+            .welcome-desc h2{
+                font-family: "Bebas Neue";
+                font-size: 48px;
+                text-align: right;
+            }
+            .welcome-desc p{
+                font-size: 18px;
+                margin-top: -25px;
+                text-align: justify;
+            }
+            .product-text {
+                width: 48%;
+                margin: 10px;
+                float: left;
+            }
+            .products-desc {
+                display: table;
+                content: "";
+                clear: both;
+            }
+            .product-text h2{
+                font-family: "Bebas Neue";
+                font-size: 55px;
+            }
+            .product-text p{
+                font-size: 24px;
+                margin-top: -32px;      
+            }
+            .product-text .btn-gallery {
+                background-color: skyblue;
+                width: 100%;
+                color: white;
+                border: 2px solid #3676e3;
+                padding: 8px 12px;
+                border-radius: 8px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .btn-gallery:hover {
+                background-color: #3676e3;
+            }
+            .service-column {
+                float: left;
+                width: 30%;
+                padding: 8px;
+                margin: 5px;
+                margin-top: -25px;
+            }
+            .price {
+                list-style-type: none;
+                border: 1px solid #eee;
+                margin: 0;
+                padding: 0;
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+                height: auto;
+            }
+            .price:hover {
+                box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+            }
+            .price .header {
+                background-color: #111;
+                color: white;
+                font-size: 25px;
+            }
+            .price li {
+                border-bottom: 1px solid #eee;
+                padding: 20px;
+                text-align: center;
+            }
+            .price .grey {
+                background-color: #eee;
+                font-size: 20px;
+                font-family: "Russo One";
+            }
+            .service-desc {
+                width: 100%;
+                display: table;
+                content: "";
+                clear: both;
+            }
+            .service-desc h2 {
+                font-family: "Bebas Neue";
+                font-size: 55px;
+            }
+            .price .text-adj {
+                font-size: 16px;
+            }
+            .container {
+                border: 2px solid #ccc;
+                background-color: #eee;
+                border-radius: 5px;
+                padding: 16px;
+                margin: 16px;
+                width: 80%;
+            }
+            .container::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            .container img {
+                float: left;
+                margin-right: 20px;
+                border-radius: 50%;
+            }
+            .clients-desc h2{
+                font-family: "Bebas Neue";
+                font-size: 55px;
+            }
+            .clients-text {
+                font-size: 20px;
+                margin-top: -60px;
+                margin-bottom: 40px;
+            }
+            .details-icon {
+                display: block;
+                width: 22%;
+                float: left;
+                text-align: center;
+                margin: 15px;
+            }
+            .details-icon i {
+                font-size: 28px;
+            }
+            .details-text h2{
+                font-family: "Russo One";
+                font-size: 25px;
+            }
+            
+            @media (min-width:340px) and (max-width:640px){
+                .logo-desc {height: 75%; margin-top: 25px;}
+                .s-buttons {margin-top: -20px;}
+                .s-button {font-size: 22px}
+                .first-slide {width: auto; margin:auto;}
+                .welcome-logo, .welcome-text, .product-text {float: none; display: block; width: 90%; margin: auto; text-align: center}
+                .welcome-logo img {width: 290px; height: 290px}
+                .welcome-text h2{text-align: center; font-size: 28px;}
+                .product-text img {width: 250px; height: 250px; margin-top: 25px;}
+                .service-column { width: 90%; margin: 5px; display: block}
+                .clients-desc h2 {font-size: 48px;}
+                .clients-text {font-size: 18px; margin-top: -40px;}
+                .details-icon {  float: none; display: block; margin 16px; width: 90%;}
+                .welcome-desc, .products-desc, .clients-desc, .service-desc, .details {margin-left: 15px; margin-right: 15px;}
+                .first-slide {padding: 80px 10px;}
+            }
+            
+            @media (min-width: 641px) and (max-width:995px){
+                .logo-desc {height: 75%; margin-top: 25px;}
+                .s-buttons {margin-top: -20px;}
+                .s-button {font-size: 22px}
+                .first-slide {width: auto; margin:auto;}
+                .welcome-logo, .welcome-text, .product-text {float: none; display: block; width: 100%; margin: auto; text-align: center}
+                .welcome-logo img {width: 290px; height: 290px}
+                .welcome-text h2{text-align: center; font-size: 50px;}
+                .welcome-text p{text-align: justify; padding: 8px}
+                .product-text img {width: 250px; height: 250px; margin-top: 25px;}
+                .service-column { width: 94%; margin: 5px; display: block}
+                .clients-desc h2 {font-size: 48px;}
+                .clients-text {font-size: 18px; margin-top: -40px;}
+                .details-icon {  float: none; display: block; margin 16px; width: 90%;}
+                .welcome-desc, .products-desc, .clients-desc, .service-desc, .details {margin-left: 15px; margin-right: 15px;}
+                .first-slide {padding: 80px 10px;}
+            }
+            
+            @media (min-width: 996px) and (max-width:1125px){
+                .logo-desc {height: 80%; margin-top: 23px;}
+                .s-buttons {margin-top: -15px;}
+                .s-button {font-size: 22px}
+                .first-slide {width: auto; margin:auto;}
+                .welcome-logo, .welcome-text, .product-text {width: 48%; margin: 5px;}
+                .welcome-logo img {width: 400px; height: 400px}
+                .welcome-text h2{text-align: center; font-size: 48px;}
+                .welcome-text p{text-align: justify; padding: 8px}
+                .product-text img {width: 300px; height: 300px;}
+                .clients-desc h2 {font-size: 48px;}
+                .clients-text {font-size: 18px; margin-top: -40px;}
+                .details-icon { margin 16px; width: 20%;}
+                .welcome-desc, .products-desc, .clients-desc, .service-desc, .details {margin-left: 15px; margin-right: 15px;}
+                .first-slide {padding: 80px 10px;}
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div class="navigation" id="myNav">
+            <a href="https://www.facebook.com/DragonsArmourPH" target="_self" id="btn-shp" title="Order Now">Shop Now</a>
+            <a href="#details"  id="btn-con" title="Contact Us">Contacts</a>
+            <a href="gallery.html" id="btn-gal" title="Visit our gallery">Gallery</a>
+            <a href="#" id="btn-home" title="Home">Home</a>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+        <div class="slide-show">
+            <div class="slide-1"></div>
+            <div class="slide-2"></div>
+            <div class="slide-3"></div>
+            <div class="s-cover"></div>
+            <center>
+                <img class="logo-desc" src="Images/Icon/logo-desc.png" width="90%" height="100%">
+                <div class="s-buttons">
+                    <button class="s-button" onClick="document.getElementById('welcome').scrollIntoView();"  title="Learn More About Us"><i class="	fas fa-lightbulb"></i>  Learn more</button>
+                    <button class="s-button" onClick="window.open('https://www.facebook.com/DragonsArmourPH')" title="Order Now"><i class="		fas fa-shopping-basket"></i>  Shop Now</button>
+                </div>
+            </center>
+        </div>
+        
+        <div class="first-slide" id="welcome" >
+            <div class="welcome-desc">
+                <div class="welcome-logo">
+                    <center>
+                    <img src="Images/Icon/icon.png" width="300px" height="300px">
+                    </center>
+                </div>
+                <div class="welcome-text">
+                    <h2>Welcome to Dragons Armour PH</h2>
+                    <p>Dragons Armour PH has been one of many apparels & clothing providers in the country. Our business caters sports league, sports enthusiast, riders and goverment agencies. We accept customization for Jerseys, Corporate & Office Uniforms, Event & Activity Shirts, ALUMNI Batch Shirts, Organization & Club Shirts, Sports & Team Uniform. We ensure that our products is high quality, durable, comfortable for our clients at affordable price.</p>
+                </div>
+            </div>
+            
+            <br>
+            <hr>
+            <br>
+            
+            <div class="products-desc">
+                <div class="product-text">
+                    <h2>Our Products</h2>
+                    <p>Choose on wide-range of products from different types clothing to uniques clothing designs! We accept customized-orders as well.</p>
+                    <button class="btn-gallery" onClick="location.href='gallery.html'">View Gallery</button>
+                </div>
+                <div class="product-text">
+                    <center>
+                    <img src="Images/Panels/Products.jpg" style="margin-right: 20px;border-radius: 50%;" width="400px" height="400px">
+                    </center>
+                </div>
+            </div>
+            
+            <br>
+            <hr>
+            <br>
+            
+            <div class="service-desc">
+                <center> 
+                <h2>Our Services</h2>
+                    <div class="service-column">
+                        <ul class="price">
+                            <li class="header"><i class="fas fa-pencil-ruler"></i></li>
+                            <li class="grey">Free Layout</li>
+                            <li>Got any ideas/design? We can customized your shirt as much as you want.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-column">
+                        <ul class="price">
+                            <li class="header"><i class="fas fa-print"></i></li>
+                            <li class="grey">Full-Dye Sublimation Printing</li>
+                            <li class="text-adj">We can print High Quality and Standard colors.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-column">
+                        <ul class="price">
+                            <li class="header"><i class="	fas fa-truck"></i></li>
+                            <li class="grey">Fast-Delivery</li>
+                            <li class="text-adj">Fast transactions and on time delivery of our products.</li>
+                        </ul>
+                    </div>
+                
+                </center>
+            </div>
+                        
+            <br>
+            <hr>
+            <br>
+            
+            <div class="clients-desc">
+                <center>
+                <h2>Our Customers and Clients</h2>
+                <p class="clients-text">See our review of our satisfied clients and customers.</p>
+                
+                    <div class="container">
+                      <img src="Images/Icon/avatar-default.png" alt="Avatar" style="width:90px">
+                      <p>Ricardo Dacara </p>
+                      <p>Highly recommend, with quality...</p>
+                    </div>
+
+                    <div class="container">
+                      <img src="Images/Icon/avatar-default.png" alt="Avatar" style="width:90px">
+                      <p>Jaynny Uy </p>
+                      <p>Highly recommended, good quality, beautiful layout. Sulit na sulit! Happy and satisfied.</p>
+                    </div>
+
+                    <div class="container">
+                      <img src="Images/Icon/avatar-default.png" alt="Avatar" style="width:90px">
+                      <p>Catherine Cabiles</p>
+                      <p>I recommend Dragons Armour, very approachable and freindly staff specially the owner...</p>
+                    </div>
+                    
+                </center>
+            </div>
+            
+            <br>
+            <hr>
+            <br>
+            <br>
+            <br>
+            
+            <div class="details" id="details" >
+                <div class="details-icon" data-aos="fade-up">
+                    <i class="fas fa-map-marker-alt" style="color:#fc3f3f;-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black;"></i>
+                    <div class="details-text">
+                        <h2>Find Us</h2>
+                        <p style="color:black">65 Orchids St. Dalig,<br> Antipolo, 1870, Philippines</p>
+                    </div>
+                </div>
+                    
+                <div class="details-icon" data-aos="fade-up">
+                    <i class="fa fa-phone" style="color:#09db4b;-webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black;"></i>
+                    <div class="details-text">
+                        <h2>Contact Us</h2>
+                        <p style="color:black">09079886670(Smart)<br>09350930424(Globe)</p>
+                    </div>
+                </div>
+                    
+                <div class="details-icon" data-aos="fade-up">
+                    <i class="fas fa-envelope-open-text" style="color:#fcef3f;-webkit-text-stroke-width: 1.75px; -webkit-text-stroke-color: black;"></i>
+                    <div class="details-text">
+                        <h2>Mail Us</h2>
+                        <a style="color:black" href="https://https://mail.google.com" target="_blank" class="gmail">dragonsarmour8@gmail.com</a>
+                        <br>
+                    </div>
+                </div>
+                
+                <div class="details-icon" data-aos="fade-up">
+                    <i class="	fas fa-thumbtack" style="color:#3676e3;-webkit-text-stroke-width: 1.75px; -webkit-text-stroke-color: black;"></i>
+                    <div class="details-text">
+                        <h2>Follow Us</h2>
+                        <a href="https://www.facebook.com/DragonsArmourPH" target="_blank" style="color:black">Facebook</a><br>
+                        <a href="https://www.instagram.com/dragonsarmourph/"  target="_blank"style="color:black">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+var nav = document.getElementById("myNav");
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    mybutton.style.display = "block";
+    nav.style.opacity = 1;
+  } else {
+    mybutton.style.display = "none";
+    nav.style.opacity = 0;
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
