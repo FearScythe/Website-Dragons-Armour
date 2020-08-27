@@ -130,8 +130,8 @@
             }
             .navigation {
                 opacity: 0;
-                margin: 0;
-                padding: 0;
+                margin: auto;
+                padding: 0px 0px;
                 width: 100%;
                 overflow: hidden;
                 background-color: #121212;
@@ -233,7 +233,7 @@
             }
             .service-column {
                 float: left;
-                width: 30%;
+                width: 30.5%;
                 padding: 8px;
                 margin: 5px;
                 margin-top: -25px;
@@ -270,6 +270,7 @@
                 display: table;
                 content: "";
                 clear: both;
+                margin: auto;
             }
             .service-desc h2 {
                 font-family: "Bebas Neue";
@@ -324,35 +325,35 @@
                 .logo-desc {height: 75%; margin-top: 25px;}
                 .s-buttons {margin-top: -20px;}
                 .s-button {font-size: 22px}
-                .first-slide {width: auto; margin:auto;}
+                .first-slide {width: auto; margin: auto; padding: 80px 0px;}
                 .welcome-logo, .welcome-text, .product-text {float: none; display: block; width: 90%; margin: auto; text-align: center}
                 .welcome-logo img {width: 290px; height: 290px}
                 .welcome-text h2{text-align: center; font-size: 28px;}
-                .product-text img {width: 250px; height: 250px; margin-top: 25px;}
-                .service-column { width: 90%; margin: 5px; display: block}
+                .product-text iframe {height: 400px; margin-top: 25px;}
+                .service-column { width: 95%; margin: 5px; display: block}
                 .clients-desc h2 {font-size: 48px;}
                 .clients-text {font-size: 18px; margin-top: -40px;}
                 .details-icon {  float: none; display: block; margin 16px; width: 90%;}
-                .welcome-desc, .products-desc, .clients-desc, .service-desc, .details {margin-left: 15px; margin-right: 15px;}
+                .welcome-desc, .products-desc, .clients-desc, .details {margin-left: 15px; margin-right: 15px;}
                 .first-slide {padding: 80px 10px;}
-                .slide-1 {background: url("Images/Backgrounds/slideshow-bg4.jpg")no-repeat center;}
+                .container p {font-size: 13px;}
             }
             
             @media (min-width: 641px) and (max-width:995px){
                 .logo-desc {height: 75%; margin-top: 25px;}
                 .s-buttons {margin-top: -20px;}
                 .s-button {font-size: 22px}
-                .first-slide {width: auto; margin:auto;}
+                .first-slide {width: auto; margin:auto; padding: 80px 0px;}
                 .welcome-logo, .welcome-text, .product-text {float: none; display: block; width: 100%; margin: auto; text-align: center}
                 .welcome-logo img {width: 290px; height: 290px}
                 .welcome-text h2{text-align: center; font-size: 50px;}
                 .welcome-text p{text-align: justify; padding: 8px}
-                .product-text img {width: 250px; height: 250px; margin-top: 25px;}
-                .service-column { width: 94%; margin: 5px; display: block}
+                .product-text iframe {height: 400px; margin-top: 25px; width: 60%}
+                .service-column { width: 95%; margin: 15px; display: block}
                 .clients-desc h2 {font-size: 48px;}
                 .clients-text {font-size: 18px; margin-top: -40px;}
                 .details-icon {  float: none; display: block; margin 16px; width: 90%;}
-                .welcome-desc, .products-desc, .clients-desc, .service-desc, .details {margin-left: 15px; margin-right: 15px;}
+                .welcome-desc, .products-desc, .clients-desc, .details {margin-left: 15px; margin-right: 15px;}
                 .first-slide {padding: 80px 10px;}
             }
             
@@ -363,16 +364,22 @@
                 .first-slide {width: auto; margin:auto;}
                 .welcome-logo, .welcome-text, .product-text {width: 48%; margin: 5px;}
                 .welcome-logo img {width: 400px; height: 400px}
-                .welcome-text h2{text-align: center; font-size: 48px;}
+                .welcome-text h2{text-align: center; font-size: 41px;}
                 .welcome-text p{text-align: justify; padding: 8px}
-                .product-text img {width: 300px; height: 300px;}
+                .product-text iframe {height: 400px; width: 100%}
                 .clients-desc h2 {font-size: 48px;}
                 .clients-text {font-size: 18px; margin-top: -40px;}
                 .details-icon { margin 16px; width: 20%;}
-                .welcome-desc, .products-desc, .clients-desc, .service-desc, .details {margin-left: 15px; margin-right: 15px;}
+                .welcome-desc, .products-desc, .clients-desc, .details {margin-left: 15px; margin-right: 15px;}
                 .first-slide {padding: 80px 10px;}
             }
-            
+            @media (min-width: 1121px) and (max-width: 1179px) {
+                .welcome-logo, .welcome-text, .product-text {width: 45%; margin: 15px;}
+                .product-text iframe {height: 400px;}
+                .welcome-text h2 {text-align: center; font-size: 40px;}
+                .details-icon {margin: 30px; width: 18%;}
+                
+            }
         </style>
     </head>
     
@@ -423,7 +430,7 @@
                 </div>
                 <div class="product-text">
                     <center>
-                    <img src="Images/Panels/Products.jpg" style="margin-right: 20px;border-radius: 50%;" width="400px" height="400px">
+                        <iframe src="https://drive.google.com/file/d/1nWRdLatiQiBunURtbh94EaWUXLQuA-uE/preview" width="100%" height="400px" allow="accelerometer; autoplay; encrypted-media; gyroscope;picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
                     </center>
                 </div>
             </div>
@@ -556,4 +563,5 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
 </script>
